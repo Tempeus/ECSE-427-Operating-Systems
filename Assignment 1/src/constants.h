@@ -23,7 +23,7 @@ switch(x){                                                                      
         break;                                                                  \
                                                                                 \
     case EXIT:                                                                  \
-        printf("Bye!");                                                         \
+        printf("Bye!\n");                                                         \
         exit(99);                                                               \
                                                                                 \
     case ERR_FEW_ARGS:                                                          \
