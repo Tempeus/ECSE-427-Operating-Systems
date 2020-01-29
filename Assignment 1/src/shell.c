@@ -44,7 +44,7 @@ int parse(char ui[]){
     while(ui[a] != '\0' && a < 1000){
         char tmp[200] = {0};
         for(b = 0; ui[a] != '\0' && ui[a] != ' ' && ui[a] != '\n' && a < 1000; a++, b++)
-                tmp[b] = tolower(ui[a]);
+                tmp[b] = ui[a];
 
         tmp[b] = '\0';
 
