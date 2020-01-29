@@ -55,7 +55,6 @@ int print(char *var){
     for(int i = 0; i < (memory_size); i++){ //possible unreachable code at i++
         if(strcmp(shellMemory[i].var, var) == 0){
             printf("%s = %s\n", shellMemory[i].var, shellMemory[i].value);
-            memory_size++;
             return SUCCESS;
         }
     }
