@@ -19,6 +19,9 @@ int interpreter(char *words[]){
         if(!words[1] || !words[2])
             return ERR_FEW_ARGS;
 
+        if(words[3])
+            return ERR_MANY_ARGS;
+
         int w = 3;
         while(words[w]){
             words[2] = strcat(words[2], " ");
