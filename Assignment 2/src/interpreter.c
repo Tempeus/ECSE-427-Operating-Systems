@@ -101,6 +101,7 @@ int quit()
         shell_memory_destory();
         exit(0);
     }
+    else
         flag_quit = 1;
     return 0;
 }
@@ -176,7 +177,7 @@ int checkSameFile(FILE *s1, FILE *s2){
  * @return      boolean
  */
 int checkSame3File(FILE *s1, FILE *s2, FILE *s3){
-    if(checkSameFile(s1, s3) == 0 || checkSameFile(s2, s3) == 0 || checkSameFile(s1,s2) == 0)
+    if(checkSameFile(s1, s3) == TRUE || checkSameFile(s2, s3) == TRUE || checkSameFile(s1,s2) == TRUE)
         return TRUE;
     else
         return FALSE;
@@ -290,6 +291,7 @@ int interpret(char *raw_input)
             free(tokens);
             return 1;
         }
+        free(raw_input);
         free(tokens);
         return quit();
     };
@@ -326,7 +328,6 @@ int interpret(char *raw_input)
         {
             printf("run: Malformed command\n");
             free(tokens);
-            return 1;
         }
         int result = run(tokens[1]);
         free(tokens);
